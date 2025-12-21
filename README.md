@@ -1,5 +1,7 @@
 # Julia Set Fractal
 
+Part of [Vanderbei's Java Simulations](https://github.com/pubino/vanderbei-apps) collection.
+
 A standalone Java application for visualizing Julia set fractals by Professor Robert Vanderbei, Princeton University.
 
 ## Requirements
