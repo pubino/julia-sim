@@ -48,7 +48,3 @@ julia-sim/
 ├── Makefile                # Build configuration
 └── .github/workflows/      # CI/CD configuration
 ```
-
-## License
-
-Based on original work by Robert Vanderbei, Princeton University.
