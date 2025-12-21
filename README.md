@@ -1,6 +1,6 @@
 # Julia Set Fractal
 
-A standalone Java application for visualizing Julia set fractals. Originally based on Robert Vanderbei's applet code, refactored to run as a modern desktop application.
+A standalone Java application for visualizing Julia set fractals by Professor Robert Vanderbei, Princeton University.
 
 ## Requirements
 
