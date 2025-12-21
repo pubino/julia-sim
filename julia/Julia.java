@@ -1,17 +1,15 @@
 package julia;
 
 import java.awt.*;
-import java.applet.*;
 import java.awt.image.*;
 import java.util.*;
 import java.io.*;
-import java.net.*;
 import java.text.*;
 
 import myutil.*;
 import myutil.Format;
 
-public class Julia extends Applet
+public class Julia extends Panel implements SimApp
 {
 	TextField Minx, Maxx, Miny, Maxy;
 
@@ -39,6 +37,10 @@ public class Julia extends Applet
 	    add(mc);
 
 	    mc.resize(300,300);
+	}
+
+	public void start() {
+		// No-op for this simulation
 	}
 
 	public void stop()
