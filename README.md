@@ -1,6 +1,6 @@
 # Julia Set Fractal
 
-Part of [Prof. Robert Vanderbei's Java Applications](https://pubino.github.io/vanderbei-apps).
+Part of [Prof. Robert Vanderbei's Java Applications](https://pubino.github.io/vanderbei-apps#julia-sim).
 
 A standalone Java application for visualizing Julia set fractals by Professor Robert Vanderbei, Princeton University.
 
