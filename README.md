@@ -1,5 +1,12 @@
 # Julia Set Fractal
 
+[Run in your browser](https://pubino.github.io/julia-sim/).
+
+The browser port keeps the Java app's 300 × 300 grid, zero initial state,
+and adaptive threshold. Each sample uses its own complex coordinate as
+the constant in the recurrence. Use **Step** to inspect one frame or
+set bounds to explore a region of the plane.
+
 Part of [Prof. Robert Vanderbei's Java Applications](https://pubino.github.io/vanderbei-apps#julia-sim).
 
 A standalone Java application for visualizing Julia set fractals by Professor Robert Vanderbei, Princeton University.
@@ -49,4 +56,22 @@ julia-sim/
 │   └── SL.java             # String parsing utilities
 ├── Makefile                # Build configuration
 └── .github/workflows/      # CI/CD configuration
+```
+
+## Browser development
+
+Preview with Docker or Python 3.13 and uv.
+
+```sh
+docker-compose up --build preview
+uv sync --locked
+uv run python scripts/build_site.py
+uv run python -m http.server 8000 --bind 127.0.0.1 --directory build/site
+```
+
+Run the Java parity, Chromium, lint, and type checks used in CI.
+
+```sh
+docker-compose run --build --rm -T js-check
+docker-compose run --build --rm -T test
 ```

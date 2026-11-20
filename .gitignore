@@ -21,3 +21,12 @@ dist/
 
 # Logs
 *.log
+
+# Python and browser tooling
+.venv/
+__pycache__/
+.mypy_cache/
+.ruff_cache/
+node_modules/
+.env*
+*.db

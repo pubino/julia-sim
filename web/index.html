@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Julia Set</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow"><a href="https://pubino.github.io/vanderbei-apps/#julia-sim">Vanderbei’s applications</a> · Princeton University</p>
+      <h1>Julia Set</h1>
+      <p class="intro">Watch the original fractal animation develop across the complex plane. Choose bounds to inspect a smaller region, or advance one iteration at a time.</p>
+    </header>
+    <section class="panel" aria-labelledby="plot-title">
+      <h2 id="plot-title">Complex plane</h2>
+      <div class="viewer">
+        <div class="sky">
+          <div class="sky-frame">
+            <canvas id="sky" width="300" height="300" role="img" aria-label="Black and white fractal sample grid"></canvas>
+            <span id="loading" class="loading">Loading Python…</span>
+          </div>
+          <dl class="facts">
+            <div><dt>Iteration</dt><dd id="iteration">—</dd></div>
+            <div><dt>Dark samples</dt><dd id="dark">—</dd></div>
+            <div><dt>Next threshold</dt><dd id="threshold">—</dd></div>
+          </dl>
+        </div>
+        <form id="settings" class="controls">
+          <fieldset id="inputs" disabled>
+            <legend>Viewport bounds</legend>
+            <div class="form-grid">
+              <label class="field">Min real<input type="number" min="-1000" max="1000" step="any" value="-2" required></label>
+              <label class="field">Max real<input type="number" min="-1000" max="1000" step="any" value="2" required></label>
+              <label class="field">Min imaginary<input type="number" min="-1000" max="1000" step="any" value="-2" required></label>
+              <label class="field">Max imaginary<input type="number" min="-1000" max="1000" step="any" value="2" required></label>
+            </div>
+          </fieldset>
+          <div class="actions">
+            <button id="play" disabled>Start</button>
+            <button id="step" class="secondary" type="button" disabled>Step</button>
+            <button id="reset" class="secondary" type="button" disabled>Reset</button>
+          </div>
+          <p class="hint">Each sample starts at <var>z</var> = 0 and repeats <var>z</var> ← <var>z</var>² + <var>c</var>, using its coordinate as <var>c</var>. It turns dark when |<var>z</var>|² exceeds the threshold for that frame.</p>
+          <p id="status" class="hint" role="status">Loading the Python engine…</p>
+          <p id="error" role="alert" hidden></p>
+          <button id="retry" class="secondary" type="button" hidden>Reload</button>
+        </form>
+      </div>
+    </section>
+    <footer>
+      <p>Based on Robert Vanderbei’s original Java application. Python runs in your browser via
+        <a href="https://pyodide.org/">Pyodide</a>. <a href="https://github.com/pubino/julia-sim">Source on GitHub</a>.</p>
+    </footer>
+  </main>
+</body>
+</html>
